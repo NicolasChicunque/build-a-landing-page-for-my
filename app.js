@@ -707,13 +707,13 @@ function syncFormUI() {
   if (overlayQ) overlayQ.textContent = state.question;
 
   state.answers.forEach((ans, idx) => {
-    const textInput = document.getElementById(`opt-text-0`.replace("0", idx));
+    const textInput = document.getElementById(`opt-text-${idx}`);
     if (textInput) textInput.value = ans;
 
-    const radio = document.getElementById(`opt-radio-0`.replace("0", idx));
+    const radio = document.getElementById(`opt-radio-${idx}`);
     if (radio) radio.checked = (idx === state.correctIndex);
 
-    const btnLabel = document.getElementById(`answer-label-0`.replace("0", idx));
+    const btnLabel = document.getElementById(`answer-label-${idx}`);
     if (btnLabel) btnLabel.textContent = ans;
 
     updateSpriteText(idx, ans);
